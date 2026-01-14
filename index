@@ -5,7 +5,7 @@
   <title>Confirmación de Afiliación | Parque Salud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Font: Sora -->
+  <!-- Tipografía Sora -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;700&display=swap" rel="stylesheet">
@@ -26,9 +26,7 @@
       --borde: #e0e0e0;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -40,7 +38,7 @@
     .container {
       max-width: 860px;
       margin: 40px auto;
-      background-color: #ffffff;
+      background: #fff;
       border-radius: 12px;
       padding: 36px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -60,20 +58,17 @@
       margin-bottom: 32px;
     }
 
-    /* Steps */
     .steps {
       display: flex;
       justify-content: space-between;
       margin-bottom: 36px;
       font-size: 14px;
-      font-weight: 400;
     }
 
     .step {
       flex: 1;
       text-align: center;
       color: #aaa;
-      position: relative;
     }
 
     .step.active {
@@ -81,7 +76,6 @@
       font-weight: 700;
     }
 
-    /* Section */
     .section-title {
       font-size: 20px;
       font-weight: 700;
@@ -89,7 +83,6 @@
       color: var(--verde-oscuro);
     }
 
-    /* Cards */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -101,37 +94,25 @@
       border: 1px solid var(--borde);
       border-radius: 10px;
       padding: 18px;
-      background-color: #fafafa;
-      transition: border-color 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: var(--lila-claro);
+      background: #fafafa;
     }
 
     .card h3 {
       font-size: 15px;
       font-weight: 700;
-      margin-bottom: 8px;
       color: var(--violeta-oscuro);
+      margin-bottom: 6px;
     }
 
     .card a {
       font-size: 14px;
-      font-weight: 400;
       color: var(--verde-oscuro);
       text-decoration: none;
     }
 
-    .card a:hover {
-      text-decoration: underline;
-    }
-
-    /* Checkboxes */
     .checkbox-group {
       margin: 28px 0;
       font-size: 14px;
-      font-weight: 400;
     }
 
     .checkbox-group label {
@@ -141,7 +122,6 @@
       cursor: pointer;
     }
 
-    /* Buttons */
     .actions {
       display: flex;
       gap: 16px;
@@ -156,125 +136,138 @@
       border-radius: 8px;
       border: none;
       cursor: pointer;
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      transition: opacity 0.2s;
     }
 
-    button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     .btn-confirmar {
-      background-color: var(--verde-confirmar);
-      color: #ffffff;
+      background: var(--verde-confirmar);
+      color: #fff;
       font-weight: 700;
     }
 
     .btn-rechazar {
-      background-color: var(--rojo-rechazar);
-      color: #ffffff;
+      background: var(--rojo-rechazar);
+      color: #fff;
       font-weight: 700;
     }
 
     .btn-secundario {
-      background-color: var(--lila-claro);
+      background: var(--lila-claro);
       color: #2b2b2b;
-      font-weight: 400;
     }
 
-    /* Último paso */
     .last-step {
       margin-top: 48px;
       padding-top: 32px;
       border-top: 1px solid var(--borde);
     }
 
-    .last-step p {
-      font-size: 15px;
-      font-weight: 300;
-      margin-bottom: 20px;
-    }
-
     .footer-note {
       margin-top: 36px;
       font-size: 13px;
-      font-weight: 300;
       color: var(--gris-suave);
     }
 
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 24px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <h1>¡Tu afiliación está casi lista!</h1>
-    <p class="subtitle">
-      Ya finalizaste la gestión comercial.  
-      Solo necesitás revisar y confirmar tus datos para continuar.
-    </p>
+  <h1>¡Tu afiliación está casi lista!</h1>
+  <p class="subtitle">
+    Ya finalizaste la gestión comercial.  
+    Solo necesitás revisar y confirmar tus datos para continuar.
+  </p>
 
-    <div class="steps">
-      <div class="step">Gestión comercial</div>
-      <div class="step">Carga de datos</div>
-      <div class="step active">Confirmación</div>
-      <div class="step">Traspaso</div>
-    </div>
-
-    <h2 class="section-title">Revisá tu información</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>🧍 Datos personales y grupo familiar</h3>
-        <a href="#">Ver datos</a>
-      </div>
-      <div class="card">
-        <h3>📄 Documentación presentada</h3>
-        <a href="#">Ver documentación</a>
-      </div>
-      <div class="card">
-        <h3>📘 Reglamento de contratación</h3>
-        <a href="#">Ver reglamento</a>
-      </div>
-      <div class="card">
-        <h3>🩺 Declaración Jurada de Salud</h3>
-        <a href="#">Ver DDJJ</a>
-      </div>
-    </div>
-
-    <div class="checkbox-group">
-      <label>
-        <input type="checkbox" /> Confirmo que los datos informados son correctos.
-      </label>
-      <label>
-        <input type="checkbox" /> Acepto el Reglamento y la Declaración Jurada de Salud.
-      </label>
-    </div>
-
-    <div class="actions">
-      <button class="btn-confirmar">CONFIRMAR DATOS</button>
-      <button class="btn-rechazar">RECHAZAR / SOLICITAR CORRECCIÓN</button>
-    </div>
-
-    <div class="last-step">
-      <h2 class="section-title">Último paso: gestionar el traspaso</h2>
-      <p>
-        Una vez confirmados los datos, solo resta realizar el traspaso para activar tu cobertura.
-      </p>
-
-      <div class="actions">
-        <button class="btn-secundario">Ver instructivo de traspaso</button>
-        <button class="btn-secundario">Adjuntar formulario</button>
-        <button class="btn-secundario">Quiero que me contacte un asesor</button>
-      </div>
-    </div>
-
-    <p class="footer-note">
-      Si necesitás ayuda, podés solicitar asistencia desde este portal.
-    </p>
-
+  <div class="steps">
+    <div class="step">Gestión comercial</div>
+    <div class="step">Carga de datos</div>
+    <div class="step active">Confirmación</div>
+    <div class="step">Traspaso</div>
   </div>
+
+  <h2 class="section-title">Revisá tu información</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🧍 Datos personales y grupo familiar</h3>
+      <a href="#">Ver datos</a>
+    </div>
+    <div class="card">
+      <h3>📄 Documentación presentada</h3>
+      <a href="#">Ver documentación</a>
+    </div>
+    <div class="card">
+      <h3>📘 Reglamento de contratación</h3>
+      <a href="#">Ver reglamento</a>
+    </div>
+    <div class="card">
+      <h3>🩺 Declaración Jurada de Salud</h3>
+      <a href="#">Ver DDJJ</a>
+    </div>
+  </div>
+
+  <div class="checkbox-group">
+    <label>
+      <input type="checkbox" id="chkDatos">
+      Confirmo que los datos informados son correctos
+    </label>
+    <label>
+      <input type="checkbox" id="chkReglamento">
+      Acepto el Reglamento y la Declaración Jurada de Salud
+    </label>
+  </div>
+
+  <div class="actions">
+    <button id="btnConfirmar" class="btn-confirmar" disabled>
+      CONFIRMAR DATOS
+    </button>
+    <button class="btn-rechazar">
+      RECHAZAR / SOLICITAR CORRECCIÓN
+    </button>
+  </div>
+
+  <div class="last-step">
+    <h2 class="section-title">Último paso: gestionar el traspaso</h2>
+    <div class="actions">
+      <button class="btn-secundario">Ver instructivo</button>
+      <button class="btn-secundario">Adjuntar formulario</button>
+      <button class="btn-secundario">Quiero que me contacte un asesor</button>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    Si necesitás ayuda, podés solicitar asistencia desde este portal.
+  </p>
+
+</div>
+
+<script>
+  const chkDatos = document.getElementById('chkDatos');
+  const chkReglamento = document.getElementById('chkReglamento');
+  const btnConfirmar = document.getElementById('btnConfirmar');
+
+  function validar() {
+    btnConfirmar.disabled = !(chkDatos.checked && chkReglamento.checked);
+  }
+
+  chkDatos.addEventListener('change', validar);
+  chkReglamento.addEventListener('change', validar);
+</script>
 
 </body>
 </html>
+
